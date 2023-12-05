@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { counterSlice } from './slices/counter';
+import { thunk } from 'redux-thunk';
+import { pokemonSlice } from './slices/pokemon';
 
 export const store = configureStore({
   reducer: {
-    counter: counterSlice.reducer,
+    pokemons: pokemonSlice.reducer
   },
+  middleware: [thunk]
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

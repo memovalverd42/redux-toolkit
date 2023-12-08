@@ -246,6 +246,11 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.5.0.tgz#6929bf3013e9d599605953ea1bc51f35376bfff7"
   integrity sha512-FVyFI13tXw5aE65sZdBpNjPVIi4Q5mARnL/39UIkxvSgRAIqCo5sCpCELk0JtXHGee2owZz5aNLbWNfBHzr71Q==
 
+"@rollup/rollup-linux-x64-gnu@^4.6.1":
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.6.1.tgz#f07bae3f7dc532d9ea5ab36c9071db329f9a1efb"
+  integrity sha512-DNGZvZDO5YF7jN5fX8ZqmGLjZEXIJRdJEdTFMhiyXqyXubBa0WVLDWSNlQ5JR2PNgDbEV1VQowhVRUh+74D+RA==
+
 "@rollup/rollup-linux-x64-musl@4.5.0":
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.5.0.tgz#a17f5decabf05b74aad684de56cf43a72a289a0b"
@@ -320,6 +325,20 @@
   version "1.3.96"
   resolved "https://registry.yarnpkg.com/@swc/core/-/core-1.3.96.tgz#f04d58b227ceed2fee6617ce2cdddf21d0803f96"
   integrity sha512-zwE3TLgoZwJfQygdv2SdCK9mRLYluwDOM53I+dT6Z5ZvrgVENmY3txvWDvduzkV+/8IuvrRbVezMpxcojadRdQ==
+  dependencies:
+    "@swc/counter" "^0.1.1"
+    "@swc/types" "^0.1.5"
+  optionalDependencies:
+    "@swc/core-darwin-arm64" "1.3.96"
+    "@swc/core-darwin-x64" "1.3.96"
+    "@swc/core-linux-arm-gnueabihf" "1.3.96"
+    "@swc/core-linux-arm64-gnu" "1.3.96"
+    "@swc/core-linux-arm64-musl" "1.3.96"
+    "@swc/core-linux-x64-gnu" "1.3.96"
+    "@swc/core-linux-x64-musl" "1.3.96"
+    "@swc/core-win32-arm64-msvc" "1.3.96"
+    "@swc/core-win32-ia32-msvc" "1.3.96"
+    "@swc/core-win32-x64-msvc" "1.3.96"
 
 "@swc/counter@^0.1.1":
   version "0.1.2"
@@ -623,6 +642,29 @@ esbuild@^0.19.3:
   version "0.19.6"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.19.6.tgz#baa0e8b6b9e655c54ffd57f1772e44677a7931cc"
   integrity sha512-Xl7dntjA2OEIvpr9j0DVxxnog2fyTGnyVoQXAMQI6eR3mf9zCQds7VIKUDCotDgE/p4ncTgeRqgX8t5d6oP4Gw==
+  optionalDependencies:
+    "@esbuild/android-arm" "0.19.6"
+    "@esbuild/android-arm64" "0.19.6"
+    "@esbuild/android-x64" "0.19.6"
+    "@esbuild/darwin-arm64" "0.19.6"
+    "@esbuild/darwin-x64" "0.19.6"
+    "@esbuild/freebsd-arm64" "0.19.6"
+    "@esbuild/freebsd-x64" "0.19.6"
+    "@esbuild/linux-arm" "0.19.6"
+    "@esbuild/linux-arm64" "0.19.6"
+    "@esbuild/linux-ia32" "0.19.6"
+    "@esbuild/linux-loong64" "0.19.6"
+    "@esbuild/linux-mips64el" "0.19.6"
+    "@esbuild/linux-ppc64" "0.19.6"
+    "@esbuild/linux-riscv64" "0.19.6"
+    "@esbuild/linux-s390x" "0.19.6"
+    "@esbuild/linux-x64" "0.19.6"
+    "@esbuild/netbsd-x64" "0.19.6"
+    "@esbuild/openbsd-x64" "0.19.6"
+    "@esbuild/sunos-x64" "0.19.6"
+    "@esbuild/win32-arm64" "0.19.6"
+    "@esbuild/win32-ia32" "0.19.6"
+    "@esbuild/win32-x64" "0.19.6"
 
 escape-string-regexp@^4.0.0:
   version "4.0.0"
@@ -1216,6 +1258,18 @@ rollup@^4.2.0:
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-4.5.0.tgz#358ee6947fe0e4c8bacdae6896539cade3107655"
   integrity sha512-41xsWhzxqjMDASCxH5ibw1mXk+3c4TNI2UjKbLxe6iEzrSQnqOzmmK8/3mufCPbzHNJ2e04Fc1ddI35hHy+8zg==
   optionalDependencies:
+    "@rollup/rollup-android-arm-eabi" "4.5.0"
+    "@rollup/rollup-android-arm64" "4.5.0"
+    "@rollup/rollup-darwin-arm64" "4.5.0"
+    "@rollup/rollup-darwin-x64" "4.5.0"
+    "@rollup/rollup-linux-arm-gnueabihf" "4.5.0"
+    "@rollup/rollup-linux-arm64-gnu" "4.5.0"
+    "@rollup/rollup-linux-arm64-musl" "4.5.0"
+    "@rollup/rollup-linux-x64-gnu" "4.5.0"
+    "@rollup/rollup-linux-x64-musl" "4.5.0"
+    "@rollup/rollup-win32-arm64-msvc" "4.5.0"
+    "@rollup/rollup-win32-ia32-msvc" "4.5.0"
+    "@rollup/rollup-win32-x64-msvc" "4.5.0"
     fsevents "~2.3.2"
 
 run-parallel@^1.1.9:

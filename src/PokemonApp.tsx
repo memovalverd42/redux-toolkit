@@ -1,18 +1,30 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { getPokemons } from './store/slices/pokemon';
+import { setPokemons } from "./store/slices/pokemon";
+import { useAppDispatch, useAppSelector } from "./hooks/useTypedSelector";
+import { useEffect } from "react";
+
 
 export const PokemonApp = () => {
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  useEffect(() =>{
-    dispatch( getPokemons() );
-  }, [])
+  useEffect(() => {
+    dispatch(setPokemons(4))
+  }, [dispatch])
+
+  const { pokemons, isLoading, page } = useAppSelector(state => state.pokemons)
+
+  console.log(isLoading);
 
   return (
     <>
-        <h1>Hola mundo Pokemon!</h1>
+      <h1>Hola mundo Pokemon!</h1>
+
+      {
+        pokemons.results.map(pokemon => (
+          <p key={pokemon.name}>{pokemon.name}</p>
+        ))
+      }
     </>
   )
+
 }

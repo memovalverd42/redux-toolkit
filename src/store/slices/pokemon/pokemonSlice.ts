@@ -1,15 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { PokemonsFetchType, setPokemons } from '.';
 //import type { PayloadAction } from '@reduxjs/toolkit'
 
 interface PokemonsState {
-    page: number;
-    pokemons: any[];
-    isLoading: boolean;
+  page: number;
+  pokemons: PokemonsFetchType;
+  isLoading: boolean;
 }
 
 const initialState: PokemonsState = {
     page: 0,
-    pokemons: [],
+    pokemons: {} as PokemonsFetchType,
     isLoading: false
 }
 
@@ -18,12 +19,20 @@ export const pokemonSlice = createSlice({
   initialState,
   reducers: {
     startLoadingPokemons: (state) => {
-        state.isLoading = true;
+      state.isLoading = true;
     },
-    setPokemons: (state, action) => {
-        console.log(action);
-    }
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase( setPokemons.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase( setPokemons.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.pokemons = action.payload;
+      })
+  }
 })
 
-export const { startLoadingPokemons, setPokemons } = pokemonSlice.actions
+export default pokemonSlice.reducer;
+export const { startLoadingPokemons } = pokemonSlice.actions;

@@ -13,6 +13,7 @@
     "@reduxjs/toolkit": "^1.9.7",
     "@rollup/rollup-linux-x64-gnu": "^4.6.1",
     "@types/react-redux": "^7.1.30",
+    "axios": "^1.6.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.3",

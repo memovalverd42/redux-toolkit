@@ -1,13 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { pokemonApi } from '../../../api/pokemonApi';
 
 export interface PokemonsFetchType {
   count:    number;
   next:     string;
   previous: null;
-  results:  Result[];
-}
+  results:  Pokemons[];
+} 
 
-export interface Result {
+export interface Pokemons {
   name: string;
   url:  string;
 }
@@ -15,9 +16,8 @@ export interface Result {
 export const setPokemons = createAsyncThunk(
   "pokemons/setPokemons",
   async ( page: number = 1 ) => {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=10&offset=${(page - 1) * 10}`);
-    const data = await response.json() as PokemonsFetchType;
-    return data;
+    const resp = await pokemonApi.get<PokemonsFetchType>(`/pokemon?limit=10&offset=${(page - 1) * 10}`);
+    return resp.data.results;
   }
 );
 
